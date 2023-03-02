@@ -1,0 +1,38 @@
+First, update the system packages by running the following command:
+
+sudo apt update && sudo apt upgrade -y
+
+------
+Next, install the required dependencies:
+
+csharp
+
+--> sudo apt-get install -y apt-transport-https ca-certificates curl
+
+------
+Add the Kubernetes GPG key:
+
+------- >  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+------
+Add the Kubernetes repository to the system:
+
+--> sudo echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+----------
+Update the system packages again:
+
+----> sudo apt-get update
+
+---------
+Finally, install kubelet:
+
+sudo apt-get install -y kubelet
+
+-------
+
+That's it! Once the installation is complete, you can verify the installation by running the following command:
+
+css
+Copy code
+--> kubelet --version
